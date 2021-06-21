@@ -17,6 +17,10 @@ class PhoneForm extends Component {
         // 새로 고침 방지
         e.preventDefault();
         this.props.onCreate(this.state);
+        this.setState({
+            name: '',
+            phone: ''
+        });
     }
 
     render() {
