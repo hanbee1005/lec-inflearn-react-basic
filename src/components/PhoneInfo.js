@@ -14,6 +14,24 @@ class PhoneInfo extends Component {
     }
 
     handleToggleEdit = () => {
+        // true -> false
+            // onUpdate
+        // false -> true
+            // props 값을 state에 저장
+        
+        const { info, onUpdate } = this.props;
+        if (this.state.editing) {
+            onUpdate(info.id, {
+                name: this.state.name,
+                phone: this.state.phone
+            });
+        } else {
+            this.setState({
+                name: info.name,
+                phone: info.phone
+            });
+        }
+
         this.setState({
             editing: !this.state.editing
         });

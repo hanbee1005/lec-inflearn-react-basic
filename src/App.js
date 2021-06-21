@@ -50,7 +50,7 @@ class App extends Component {
         <PhoneInfoList 
           data={this.state.information}
           onRemove={this.handleRemove}
-          onUpdate={this.onUpdate}
+          onUpdate={this.handleUpdate}
         />
       </div>
     );
