@@ -18,6 +18,9 @@ class PhoneInfoList extends Component {
                 />
             )
         );
+
+        console.log('rendering list');
+
         return (
             <div>
                 {list}
