@@ -13,9 +13,15 @@ class PhoneForm extends Component {
         });
     }
 
+    handelSubmit = (e) => {
+        // 새로 고침 방지
+        e.preventDefault();
+        this.props.onCreate(this.state);
+    }
+
     render() {
         return (
-            <form>
+            <form onSubmit={this.handelSubmit}>
                 <input 
                     name="name"
                     placeholder="이름" 
@@ -28,6 +34,7 @@ class PhoneForm extends Component {
                     onChange={this.handleChange}
                     value={this.state.phone}
                 />
+                <button type="submit">등록</button>
                 <div>
                     {this.state.name} <br />
                     {this.state.phone}
